@@ -4,18 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-private static Scanner scanner;
+private static Scanner sc;
 
 public class Desafio {
-
+//
 public static int[] ints(String msg) {
 	List<Integer> result = new ArrayList<Integer>();
 	
-	scanner =new Scanner(msg);
-	while (scanner.hasNext()) {
-		result.add(scanner.nextInt());
+	sc = new Scanner(msg);
+	while (sc.hasNext()) {
+		result.add(sc.nextInt());
 	}else {
-		scanner.next();
+		sc.next();
 	}
 	return result.stream().mapToInt(i->i).toArray();
 }
