@@ -64,6 +64,10 @@ public class Product {
 	public void setPvp(float pvp) {
 		this.pvp = pvp;
 	}
+	
+//	//Alinea a) do número 4 da pratica 2
+//	private static final INSTANCE = new INSTANCE;
+	
 
 	@Override
 	public String toString() {
