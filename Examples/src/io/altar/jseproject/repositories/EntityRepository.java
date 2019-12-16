@@ -1,25 +1,24 @@
 package io.altar.jseproject.repositories;
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 import io.altar.jseproject.models.Entity;
 
 public abstract class EntityRepository <T extends Entity>  {
 	
-	//Cria uma metodo hash map para identificar todos os elementos da base de dados
+//Cria uma metodo hash map para identificar todos os elementos da base de dados
 	
 	Map<Long, T> myMap = new HashMap<Long, T>();
 	
-	long nextId= 0;
-	
-	private long netxIdNext() {
-		return nextId = netxIdNext();
-	}
-	
+	long nextId= 1;
+
 	public long create(T entity){
-		long nextId =  netxIdNext();
+		entity.setId(nextId++);
 		myMap.put(entity.getId(), entity);
+		return entity.getId();
 	}
 	
 	
@@ -36,18 +35,31 @@ public abstract class EntityRepository <T extends Entity>  {
 	}
 	
 // editar os elementos por Id
-	public Collection<T>  editId(T entity) {
+	public void editId(T entity) {
 		myMap.put(entity.getId(), entity);
 			
 	}
 	
-//eliminar as variaveis --nao esta a funcionar...
-public Collection<T> delete(T entity) {
-		myMap.remove(entity.getId(), entity);	
+//eliminar as variaveis
+public void delete(Long id) {
+		myMap.remove(id);	
 
 	}
 	
-	}
+
+//verificacao se nao existe Ids
+public boolean isEmpty() {
+	return (myMap.size() == 0) ? true : false;
+}
+
+//pedir todos os elementos da DB
+public Set<Long> getAllIds() {
+	return myMap.keySet();
+}
+
+
+}
+
 
 
 

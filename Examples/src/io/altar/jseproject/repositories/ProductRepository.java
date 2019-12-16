@@ -1,16 +1,24 @@
 package io.altar.jseproject.repositories;
 
+import io.altar.jseproject.models.Product;
 
-
-public class ProductRepository extends EntityRepository{
-	private static INSTANCE;
-//
-	private static final void INSTANCE () {
-		Product INSTANCE = new Product;
+//duvida na uilitzacao dos <>??
+public class ProductRepository extends EntityRepository <Product> {
+	
+//o que significa a palavra final?? - o que estou a fazer aqui?
+	
+	private static final ProductRepository INSTANCE= new ProductRepository();
+	
+	
+//o que faz este metodo?
+	private ProductRepository() {
 		
 	}
-
-public static  getInstance () {
+	
+		
+	public static  ProductRepository getInstance () {
+	
+	return INSTANCE;
 	
 }
 }
