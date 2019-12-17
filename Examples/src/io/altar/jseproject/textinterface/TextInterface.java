@@ -101,7 +101,7 @@ public class TextInterface {
 				System.out.println("4)\t Remover produto");
 				System.out.println("5)\t Voltar");
 			}
-			option = sc.getValidInt("Selecionar opção : ", options);
+			option = sc.getValidInt("Selecionar opcao : ", options);
 			switch (option) {
 				case 1:
 					//criar produto
@@ -142,6 +142,9 @@ public class TextInterface {
 		long shelfId = sc.getValidLong("Introduzir ID da prateleira que quer remover : ", DBS.getAllIds());
 		DBS.delete(shelfId);
 		System.out.println("Prateleira removida");
+		
+//TODO editar os produtos (products Id) da prateleira eliminada?
+		
 	}
 //logica para editar prateleira///////
 	private void editShefl() {
@@ -153,11 +156,23 @@ public class TextInterface {
 		shelf.setCapacity(capacity);
 		shelf.setDailyPrice(dailyPrice);
 		DBS.editId(shelf);
+		
+//TODO verificar a capacidade da prateleira com os produtos existentes e perguntar o que fazer
+		
+	
+		
 	}
 	
 //logica para consulta prateleiras///////
 	private void viewShefl() {
-		System.out.println("Id das prateleiras"+DBS.getAllIds());
+		int [] countIDs = DBP.getAllIds();// variavel com o arrya de produts ids
+		System.out.println("Id das prateleiras" + DBS.getAllIds());
+		
+		//TODO introduzir info count produts
+		System.out.println("Quantidade de produtos" + productsIds.lenght);
+
+
+		
 	}
 	
 //logica para a criacao de produts/////
@@ -169,7 +184,9 @@ public class TextInterface {
 		float pvp = sc.getFloat("Coloque o PVP");
 		Product product1 = new Product(discount, iva,pvp);
 		DBP.create(product1);
-		
+		System.out.println("Produto criado");
+
+//TODO colocar o produto nas prateleiras disponiveis - comparar o count de produtos e a capacidade da prateleira
 	}
 	
 //logica para a edicao de produts/////
@@ -185,11 +202,20 @@ public class TextInterface {
 		product1.setIva(iva);
 		product1.setPvp(pvp);
 		DBP.editId(product1);
+		System.out.println("Produto editado");
+		
+//TODO editar os produtos em todas as prateleiras onde existe o produto
+		
+//TODO editar tambem prateleira onde esta o produto
 	}
 
 //logica para consulta produtos ///////
 		private void viewProduct() {
 			System.out.println("Id dos produtos "+DBP.getAllIds());
+			//descricao do produto??
+			System.out.println(DBP);
+			
+//TODO identificar em quantas prateleiras esta o produto
 		}
 		
 ///logica para eliminar produts
@@ -198,6 +224,10 @@ public class TextInterface {
 			long productId = sc.getValidLong("Introduzir ID do produt que quer remover : ", DBP.getAllIds());
 			DBP.delete(productId);
 			System.out.println("Produto removido");
+			
+//TODO remover o produto de todas as prateleiras
+			Set<Long> productsIds = DBP.getAllIds();
+			for (Long id : productsIds) {}
 		}
 }
 
