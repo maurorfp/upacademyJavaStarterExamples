@@ -157,7 +157,7 @@ public class TextInterface {
 		shelf.setDailyPrice(dailyPrice);
 		DBS.editId(shelf);
 		
-//TODO verificar a capacidade da prateleira com os produtos existentes e perguntar o que fazer
+
 		
 	
 		
@@ -168,7 +168,7 @@ public class TextInterface {
 		int [] countIDs = DBP.getAllIds();// variavel com o arrya de produts ids
 		System.out.println("Id das prateleiras" + DBS.getAllIds());
 		
-		//TODO introduzir info count produts
+		//TODO introduzir info count produts - nao funciona
 		System.out.println("Quantidade de produtos" + productsIds.lenght);
 
 
@@ -186,7 +186,6 @@ public class TextInterface {
 		DBP.create(product1);
 		System.out.println("Produto criado");
 
-//TODO colocar o produto nas prateleiras disponiveis - comparar o count de produtos e a capacidade da prateleira
 	}
 	
 //logica para a edicao de produts/////
@@ -226,6 +225,8 @@ public class TextInterface {
 			System.out.println("Produto removido");
 			
 //TODO remover o produto de todas as prateleiras
+//ainda nao funciona
+			
 			Set<Long> productsIds = DBP.getAllIds();
 			for (Long id : productsIds) {}
 		}
