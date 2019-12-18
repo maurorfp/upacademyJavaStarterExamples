@@ -10,8 +10,12 @@ public class TextInterfaceState {
 					new MenuInit(), 		// 0
 					new MenuProducts(), 	// 1
 					new ProductAdd(),		// 2
-					new MenuShelf() }; 		// 3
-			
+					new MenuShelf(), 		// 3
+					new ProdutcEdit(),
+					new ViewProducts(),
+					
+					
+			}; 
 			// 4. transitions
 			private int[][] transition = { 
 					{ 1, 3 }, 				// State 0

@@ -4,6 +4,7 @@ public class MenuInit extends State{
 
 	@Override
 	public int run() {
+		
 		System.out.println("1)\t Listar Produtos");
 		System.out.println("2)\t Listar Prateleiras");
 		System.out.println("3)\t Sair");

@@ -8,8 +8,9 @@ public abstract class  State {
 	
 	public static final ScannerUtils sc = new ScannerUtils();
 	
-	private ProductRepository DBP= ProductRepository.getInstance();
-	private ShelfRepository DBS = ShelfRepository.getInstance();
+	//era private mudei para public porque a classe ProductAdd nao conseguia aceder ??
+	public ProductRepository DBP= ProductRepository.getInstance();
+	public ShelfRepository DBS = ShelfRepository.getInstance();
 
 	public abstract int run();
 
