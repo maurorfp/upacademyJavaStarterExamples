@@ -165,7 +165,7 @@ public class TextInterface {
 	
 //logica para consulta prateleiras///////
 	private void viewShefl() {
-		int [] countIDs = DBP.getAllIds();// variavel com o arrya de produts ids
+		int [] countIDs =  ;// variavel com o arrya de produts ids
 		System.out.println("Id das prateleiras" + DBS.getAllIds());
 		
 		//TODO introduzir info count produts - nao funciona

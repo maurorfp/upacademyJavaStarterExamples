@@ -18,9 +18,13 @@ public class ProdutcEdit extends State {
 		product1.setPvp(pvp);
 		DBP.editId(product1);
 		System.out.println("Produto editado");
+		System.out.println("");
 		
-		return product1;
-// qual e o return??
+		return 1;
+
 	}
 
 }
+//TODO editar os produtos em todas as prateleiras onde existe o produto
+
+//TODO editar tambem prateleira onde esta o produto

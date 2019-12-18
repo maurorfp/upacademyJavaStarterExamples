@@ -13,3 +13,4 @@ public class ViewProducts extends State {
 	}
 
 }
+//TODO identificar em quantas prateleiras esta o produto

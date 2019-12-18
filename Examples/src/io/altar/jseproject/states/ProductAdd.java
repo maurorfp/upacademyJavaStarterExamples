@@ -9,11 +9,15 @@ public class ProductAdd extends State {
 		System.out.println("Criar produto:");
 		int discount = sc.getInt("Indique o desconto associado ao produto");
 		int[] options = {6, 13, 23};
-		int iva = sc.getValidIvas("Coloque o valor do IVA (6%,13% ou 23%", options);
+		int iva = sc.getValidIvas("Coloque o valor do IVA (6%,13% ou 23%)", options);
 		float pvp = sc.getFloat("Coloque o PVP");
 		Product product1 = new Product(discount, iva,pvp);
 		DBP.create(product1);
 		System.out.println("Produto criado");
+		System.out.println("");
+		
+		return 1;
 	}
 
 }
+//TODO 

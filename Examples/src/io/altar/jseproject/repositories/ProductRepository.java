@@ -11,7 +11,7 @@ public class ProductRepository extends EntityRepository <Product> {
 	private static final ProductRepository INSTANCE= new ProductRepository();
 	
 	
-//o que faz este metodo?
+//o que faz este metodo? - funcao encapsulada que apenas retorna um elemento para BD.
 	private ProductRepository() {
 		
 	}
