@@ -10,7 +10,6 @@ import io.altar.jseproject.models.Entity;
 public abstract class EntityRepository <T extends Entity>  {
 	
 //Cria uma metodo hash map para identificar todos os elementos da base de dados
-	
 	Map<Long, T> myMap = new HashMap<Long, T>();
 	
 	long nextId= 1;

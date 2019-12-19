@@ -10,7 +10,7 @@ public class ShelfAdd extends State{
 			int capacity = sc.getInt("Indique a capacidade da prateleira");
 			float dailyPrice = sc.getFloat("Indique o preco diario da prateleira");
 			Shelf shelf = new Shelf(capacity, dailyPrice);
-			DBS.create(shelf);
+			shelfBusiness.create(shelf);
 			System.out.println("Prateleira criada");
 		
 		return 1;

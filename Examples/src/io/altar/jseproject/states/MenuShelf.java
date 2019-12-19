@@ -3,15 +3,16 @@ package io.altar.jseproject.states;
 import java.util.Set;
 
 public class MenuShelf extends State{
+	
 
 	@Override
 	public int run() {
-		Set<Long> productsIds = DBP.getAllIds();
+		Set<Long> productsIds = productBusiness.getAllIds();
 		for (Long id : productsIds) {
 			System.out.println("ID produto : " + id);
 		}
 		int[] options;
-		if (DBP.isEmpty()) {
+		if (productBusiness.isEmpty()) {
 			options = new int[] { 1, 5 };
 			System.out.println("1)\t Criar Prateleira");
 			System.out.println("5)\t Voltar");}

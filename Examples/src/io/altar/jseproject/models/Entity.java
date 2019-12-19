@@ -1,4 +1,4 @@
-package io.altar.jseproject.models;
+	package io.altar.jseproject.models;
 
 import java.util.HashMap;
 import java.util.Map;

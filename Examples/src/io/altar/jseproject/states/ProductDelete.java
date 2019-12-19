@@ -5,8 +5,8 @@ public class ProductDelete extends State {
 	@Override
 	public int run() {
 		System.out.println("Remover produto");
-		long productId = sc.getValidLong("Introduzir ID do produto que quer remover : ", DBP.getAllIds());
-		DBP.delete(productId);
+		long productId = sc.getValidLong("Introduzir ID do produto que quer remover : ", productBusiness.getAllIds());
+		productBusiness.delete(productId);
 		
 
 		return 1;

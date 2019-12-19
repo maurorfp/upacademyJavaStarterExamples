@@ -5,8 +5,8 @@ public class ShelfDelete extends State {
 	@Override
 	public int run() {
 		System.out.println("Remover prateleira");
-		long shelfId = sc.getValidLong("Introduzir ID da prateleira que quer remover : ", DBS.getAllIds());
-		DBS.delete(shelfId);
+		long shelfId = sc.getValidLong("Introduzir ID da prateleira que quer remover : ", shelfBusiness.getAllIds());
+		shelfBusiness.delete(shelfId);
 		System.out.println("Prateleira removida");
 		return 1;
 	}

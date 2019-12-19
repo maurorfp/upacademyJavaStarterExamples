@@ -7,7 +7,6 @@ import io.altar.jseproject.models.Product;
 public class ProductRepository extends EntityRepository <Product> {
 	
 //o que significa a palavra final?? - o que estou a fazer aqui?
-	
 	private static final ProductRepository INSTANCE= new ProductRepository();
 	
 	
@@ -23,3 +22,4 @@ public class ProductRepository extends EntityRepository <Product> {
 	
 }
 }
+//todos os metodos e classes usadas sao instanciadas nesta classe

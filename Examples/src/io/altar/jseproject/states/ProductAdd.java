@@ -12,7 +12,7 @@ public class ProductAdd extends State {
 		int iva = sc.getValidIvas("Coloque o valor do IVA (6%,13% ou 23%)", options);
 		float pvp = sc.getFloat("Coloque o PVP");
 		Product product1 = new Product(discount, iva,pvp);
-		DBP.create(product1);
+		productBusiness.create(product1);
 		System.out.println("Produto criado");
 		System.out.println("");
 		
