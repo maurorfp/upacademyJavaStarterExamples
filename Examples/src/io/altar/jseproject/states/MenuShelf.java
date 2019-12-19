@@ -6,15 +6,25 @@ public class MenuShelf extends State{
 
 	@Override
 	public int run() {
-		System.out.println("1)\t Criar Shelves");
-		System.out.println("2)\t Editar Shelves");
-		System.out.println("3)\t Consultar Shelves");
-		System.out.println("4)\t Remover Shelves");
+		Set<Long> productsIds = DBP.getAllIds();
+		for (Long id : productsIds) {
+			System.out.println("ID produto : " + id);
+		}
+		int[] options;
+		if (DBP.isEmpty()) {
+			options = new int[] { 1, 5 };
+			System.out.println("1)\t Criar Prateleira");
+			System.out.println("5)\t Voltar");}
+		else {
+		System.out.println("1)\t Criar Prateleira");
+		System.out.println("2)\t Editar Prateleira");
+		System.out.println("3)\t Consultar Prateleira");
+		System.out.println("4)\t Remover Prateleira");
 		System.out.println("5)\t Voltar");
-		int[] options = { 1, 2, 3, 4, 5 };
-		return sc.getValidInt("Selecionar opcao : ", options);
-	
-	
+		options = new int[] { 1, 2, 3, 4, 5 };
+		
+		}
+		return sc.getValidInt("Selecionar opcao: ", options);
 	}
 
 }

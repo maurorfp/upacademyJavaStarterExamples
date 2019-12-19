@@ -4,6 +4,7 @@ public class ViewProducts extends State {
 
 	@Override
 	public int run() {
+		
 		System.out.println("Id dos produtos "+DBP.getAllIds());
 		//descricao do produto??
 		System.out.println(DBP);
