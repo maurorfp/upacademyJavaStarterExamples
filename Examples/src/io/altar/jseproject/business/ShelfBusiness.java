@@ -17,16 +17,13 @@ public class ShelfBusiness implements ShelfBusinessInterface{
 
 	@Override
 	public Collection<Shelf> consultar() {
-		DBS.consultar();
-		
-	//que nul ??
-		return null;
+		return DBS.consultar();
 	}
 
 	@Override
 	public Shelf consultarId(Long id) {
-		DBS.consultarId(id);
-		return null;
+		return DBS.consultarId(id);
+		
 	}
 
 	@Override
@@ -43,14 +40,15 @@ public class ShelfBusiness implements ShelfBusinessInterface{
 
 	@Override
 	public boolean isEmpty() {
-		DBS.isEmpty();
-		return false;
+		return DBS.isEmpty();
+		
 	}
 
 	@Override
 	public Set<Long> getAllIds() {
-		DBS.getAllIds();
-		return null;
+		
+		return DBS.getAllIds();
 	}
+
 
 }

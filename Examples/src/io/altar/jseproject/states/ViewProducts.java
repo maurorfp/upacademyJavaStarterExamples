@@ -6,11 +6,12 @@ public class ViewProducts extends State {
 	public int run() {
 		
 		System.out.println("Id dos produtos "+productBusiness.getAllIds());
-		//descricao do produto??
-		System.out.println(productBusiness);
 		
-// qual e o return?
-		return 0;
+		//descricao dos produtos??
+		System.out.println(productBusiness.consultar());
+		
+		
+		return 1;
 	}
 
 }

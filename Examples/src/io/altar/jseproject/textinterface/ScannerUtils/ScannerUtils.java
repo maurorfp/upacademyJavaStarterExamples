@@ -1,5 +1,6 @@
 package io.altar.jseproject.textinterface.ScannerUtils;
 
+import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -168,6 +169,26 @@ public class ScannerUtils {
 		} while (!valid);
 		return result;
 	}
+	
+//os nomes podem ser os mesmo desde que a assintaura, ou seja, o tipo de parametro utilizado. O nome da funcao de baixo e igual, mas o tipo de parametro um e List e outro e Long
+	public long getValidLong(String msg, List<Long> values) {
+		long result;
+		boolean valid = false;
+		do {
+			String validString = msg + "(";
+			for (long i : values) {
+				validString += " " + i;
+			}
+			validString += " )";
+			result = getLong(validString);
+			for (long i : values) {
+				if (result == i) {
+					valid = true;
+				}
+			}
+		} while (!valid);
+		return result;
+	}
 
 	public long getValidInt(String msg, long min, long max) {
 		long result;
@@ -192,7 +213,10 @@ public class ScannerUtils {
 			System.out.println("introduza uma valor de IVA valido");
 
 		}
+		
+		
+	
 	}
-
+	
 }
 	
