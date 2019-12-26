@@ -46,7 +46,7 @@ public class ProductBusiness implements ProductBusinessInterface{
 		return DBP.isEmpty();
 	}
 
-//returns??
+
 	@Override
 	public Set<Long> getAllIds() {
 		

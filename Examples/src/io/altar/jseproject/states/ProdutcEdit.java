@@ -9,7 +9,7 @@ public class ProdutcEdit extends State {
 		long id = sc.getValidLong("Qual o id do produto a editar?", productBusiness.getAllIds());
 		Product product1 = productBusiness.consultarId(id);
 		System.out.println("Editar produto:");
-		int discount = sc.getInt("Edite o desconto associado ao produto");
+		int discount = sc.getInt("Edite o desconto associado ao produto" );//+ Product.getDiscount() ir buscar o valor antigo??
 		int[] options = {6, 13, 23};
 		int iva = sc.getValidIvas("Edite o valor do IVA (6%,13% ou 23%)", options);
 		float pvp = sc.getFloat("Edite o PVP");
