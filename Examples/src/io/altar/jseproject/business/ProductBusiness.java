@@ -1,6 +1,7 @@
 package io.altar.jseproject.business;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
 import io.altar.jseproject.models.Product;
@@ -36,7 +37,10 @@ public class ProductBusiness implements ProductBusinessInterface{
 
 	@Override
 	public void delete(Long id) {
+//		Product p= consultarId(id);
+//		List<Long> ids = p.getShelvesIds();
 		DBP.delete(id);
+//aqui e que vai ficar o delete dos ids dos produtos nas shelfs onde estao. AINDA FALTA FAZER??//		
 		
 	}
 
